@@ -4,8 +4,7 @@ public class producerConsumer {
 
         public static void main(String[] args)  throws InterruptedException
         {
-            // Object of a class that has both produce()
-            // and consume() methods
+            // Object of a class that has both produce() and consume() methods
             final PC pc = new PC();
 
             // Create producer thread
