@@ -1,6 +1,23 @@
-import java.util.Arrays;
+package Lab;
+import java.util.*;
+	
+class OddEvenTranspose {
+	 public static void main(String[] args) {
+	        // Example usage
+	        OddEvenTranspose arrayOperations = new OddEvenTranspose();
+	        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	        arrayOperations.separateEvenOdd(arr);
 
-class ArrayOperations {
+	        MatrixOperations matrixOperations = new MatrixOperations();
+	        int[][] matrix = {
+	                { 1, 2, 3 },
+	                { 4, 5, 6 },
+	                { 7, 8, 9 }
+	        };
+	        displayMatrix(matrix);
+	        matrixOperations.transposeMatrix(matrix);
+	    }
+	 
     // Method to separate even and odd elements of an array
     void separateEvenOdd(int[] arr) {
         int evenCount = 0;
@@ -35,9 +52,18 @@ class ArrayOperations {
         System.out.println("Even elements array: " + Arrays.toString(evenArray));
         System.out.println("Odd elements array: " + Arrays.toString(oddArray));
     }
+    // Method to display a matrix
+    public static void displayMatrix(int[][] matrix) {
+    	System.out.println("\nOriginal matrix: ");
+        for (int[] row : matrix) {
+            for (int num : row) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+    }
 }
-
-class MatrixOperations extends ArrayOperations {
+class MatrixOperations extends OddEvenTranspose {
     // Method to find the transpose of a matrix
     void transposeMatrix(int[][] matrix) {
         int rows = matrix.length;
@@ -52,29 +78,12 @@ class MatrixOperations extends ArrayOperations {
         }
 
         // Print the transpose matrix
-        System.out.println("Transpose of the matrix:");
+        System.out.println("\nTranspose of the matrix:");
         for (int i = 0; i < cols; i++) {
             for (int j = 0; j < rows; j++) {
                 System.out.print(transpose[i][j] + " ");
             }
             System.out.println();
         }
-    }
-}
-
-public class OddEvenTranspose {
-    public static void main(String[] args) {
-        // Example usage
-        ArrayOperations arrayOperations = new ArrayOperations();
-        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        arrayOperations.separateEvenOdd(arr);
-
-        MatrixOperations matrixOperations = new MatrixOperations();
-        int[][] matrix = {
-                { 1, 2, 3 },
-                { 4, 5, 6 },
-                { 7, 8, 9 }
-        };
-        matrixOperations.transposeMatrix(matrix);
     }
 }
