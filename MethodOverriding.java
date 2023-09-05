@@ -1,21 +1,23 @@
 package Lab;
+
+package Lab;
 import java.util.*;
 	
-class OddEvenTranspose {
+public class OddEvenTranspose {
 	 public static void main(String[] args) {
 	        // Example usage
-	        OddEvenTranspose arrayOperations = new OddEvenTranspose();
-	        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-	        arrayOperations.separateEvenOdd(arr);
+	        int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	        OddEvenTranspose arr = new OddEvenTranspose();
+	        arr.separateEvenOdd(array);
 
-	        MatrixOperations matrixOperations = new MatrixOperations();
+	        MatrixOperations mat = new MatrixOperations();
 	        int[][] matrix = {
 	                { 1, 2, 3 },
 	                { 4, 5, 6 },
 	                { 7, 8, 9 }
 	        };
 	        displayMatrix(matrix);
-	        matrixOperations.transposeMatrix(matrix);
+	        mat.transposeMatrix(matrix);
 	    }
 	 
     // Method to separate even and odd elements of an array
