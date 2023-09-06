@@ -44,8 +44,7 @@ public class producerConsumer {
             t2.join();
         }
 
-        // This class has a list, producer (adds items to list
-        // and consumber (removes items).
+        // This class has a list, producer adds items to list and consumber removes items
         public static class PC {
 
             // Create a list shared by producer and consumer
