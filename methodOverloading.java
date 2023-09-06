@@ -1,41 +1,28 @@
-package JAVA_INTERNAL;
+package Lab;
+import java.util.*;
 
-public class methodOverloadingP8 {
-
-        // Method to add two integers
-        public int add(int a, int b) {
-            return a + b;
-        }
-
-        // Method to add three integers
-        public int add(int a, int b, int c) {
-            return a + b + c;
-        }
-
-        // Method to add two doubles
-        public double add(double a, double b) {
-            return a + b;
-        }
-
-        // Method to concatenate two strings
-        public String add(String str1, String str2) {
-            return str1 + str2;
-        }
-
-        public static void main(String[] args) {
-            methodOverloadingP8 example = new methodOverloadingP8();
-
-            // Call the methods with different parameter lists
-            int sum1 = example.add(2, 3);
-            int sum2 = example.add(1, 2, 3);
-            double sum3 = example.add(2.5, 3.7);
-            String combinedStr = example.add("Hello, ", "World!");
-
-            System.out.println("Sum of 2 and 3: " + sum1);
-            System.out.println("Sum of 1, 2, and 3: " + sum2);
-            System.out.println("Sum of 2.5 and 3.7: " + sum3);
-            System.out.println("Concatenated string: " + combinedStr);
-        }
-    }
-
-
+public class MethodOverload {
+	public int add(int a,int b) {
+		return a+b;
+	}
+	public int add(int a, int b, int c) {
+		return a+b+c;
+	}
+	public String add(String str1,String str2) {
+		return str1+str2;
+	}
+	public float add(float x, float y) {
+		return x+y;
+	}
+	public static void main(String []args) {
+		MethodOverload obj= new MethodOverload();
+		int sum1 = obj.add(5,9);
+		int sum2 = obj.add(4,8,9);
+		float sum3 = obj.add((float)8.9,(float)5.4);
+		String concatination = obj.add("Hi its me"," MARIO");
+		System.out.println("Sum of 5 and 9  = "+sum1);
+		System.out.println("Sum of 4,8 and 9 = "+sum2);
+		System.out.println("Sum of 8.9 and 5.4 = "+sum3);
+		System.out.println("Conatination of given strings = "+concatination);
+	}
+}
