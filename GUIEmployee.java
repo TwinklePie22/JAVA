@@ -61,7 +61,7 @@ public class GUIEmployee
 				try 
 				{
 					FileWriter fw=new FileWriter(fileobj.getAbsoluteFile(),true);
-					System.out.println("\n NAME : " +f1.getText()  +"\n"  +"ID : " +f2.getText()  +"\n"  +"DOJ : " +f3.getText()  +"\n"  +"DOB : "+f4.getText() +"\n");
+					System.out.println("\nNAME : " +f1.getText()  +"\n"  +"ID : " +f2.getText()  +"\n"  +"DOJ : " +f3.getText()  +"\n"  +"DOB : "+f4.getText() +"\n");
 					fw.write("\n NAME : " +f1.getText()  +"\n"  +"ID : " +f2.getText()  +"\n"  +"DOJ : " +f3.getText()  +"\n"  +"DOB : "+f4.getText() +"\n");
 					fw.close();
 				} 
