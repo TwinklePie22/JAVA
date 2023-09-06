@@ -1,27 +1,49 @@
 package Lab;
-
-package Lab;
 import java.util.*;
-	
-public class OddEvenTranspose {
-	 public static void main(String[] args) {
-	        // Example usage
-	        int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-	        OddEvenTranspose arr = new OddEvenTranspose();
-	        arr.separateEvenOdd(array);
 
-	        MatrixOperations mat = new MatrixOperations();
-	        int[][] matrix = {
-	                { 1, 2, 3 },
-	                { 4, 5, 6 },
-	                { 7, 8, 9 }
-	        };
-	        displayMatrix(matrix);
-	        mat.transposeMatrix(matrix);
-	    }
-	 
-    // Method to separate even and odd elements of an array
-    void separateEvenOdd(int[] arr) {
+public class OddEvenTranspose {
+    public static void main(String[] args) {
+        // Example usage
+        int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        OddEvenTranspose t = new MatrixOperations(); // Using the child class
+        t.performOperation(array); // Call the overridden method
+
+        int[][] matrix = {
+                { 1, 2, 3 },
+                { 4, 5, 6 },
+                { 7, 8, 9 }
+        };
+        displayMatrix(matrix);
+        t.performOperation(matrix); // Call the overridden method
+    }
+
+    // Common method to perform an operation on an array or matrix (to be overridden)
+    void performOperation(int[] arr) {
+        // Default implementation in the parent class
+        System.out.println("This is the parent class method.");
+    }
+
+    void performOperation(int[][] matrix) {
+        // Default implementation in the parent class
+        System.out.println("This is the parent class method.");
+    }
+
+    // Method to display a matrix
+    public static void displayMatrix(int[][] matrix) {
+        System.out.println("\nOriginal matrix: ");
+        for (int[] row : matrix) {
+            for (int num : row) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+class MatrixOperations extends OddEvenTranspose {
+    // Override the common method for arrays
+    @Override
+    void performOperation(int[] arr) {
         int evenCount = 0;
         int oddCount = 0;
 
@@ -54,20 +76,10 @@ public class OddEvenTranspose {
         System.out.println("Even elements array: " + Arrays.toString(evenArray));
         System.out.println("Odd elements array: " + Arrays.toString(oddArray));
     }
-    // Method to display a matrix
-    public static void displayMatrix(int[][] matrix) {
-    	System.out.println("\nOriginal matrix: ");
-        for (int[] row : matrix) {
-            for (int num : row) {
-                System.out.print(num + " ");
-            }
-            System.out.println();
-        }
-    }
-}
-class MatrixOperations extends OddEvenTranspose {
-    // Method to find the transpose of a matrix
-    void transposeMatrix(int[][] matrix) {
+
+    // Override the common method for matrices
+    @Override
+    void performOperation(int[][] matrix) {
         int rows = matrix.length;
         int cols = matrix[0].length;
 
