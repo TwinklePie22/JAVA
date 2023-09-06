@@ -5,14 +5,13 @@ public class OddEvenTranspose {
     public static void main(String[] args) {
         // Example usage
         int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        OddEvenTranspose t = new MatrixOperations(); // Using the child class
-        t.performOperation(array); // Call the overridden method
-
         int[][] matrix = {
                 { 1, 2, 3 },
                 { 4, 5, 6 },
                 { 7, 8, 9 }
         };
+        OddEvenTranspose t = new MatrixOperations(); // Using the child class
+        t.performOperation(array); // Call the overridden method
         displayMatrix(matrix);
         t.performOperation(matrix); // Call the overridden method
     }
