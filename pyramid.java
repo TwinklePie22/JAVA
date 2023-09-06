@@ -1,9 +1,13 @@
-package JAVA_INTERNAL;
+package Lab;
 import java.util.Scanner;
-public class Pyramid {
-    public static void main(String[] args) {
-        int rows = 6, k = 0, count = 0, count1 = 0;
 
+public class Pattern {
+    public static void main(String[] args) {
+        int rows=6;
+        int k = 0, count = 0, count1 = 0;
+//        Scanner sc = new Scanner(System.in);
+//        System.out.print("Enter number of rows : ");
+//        int rows = sc.nextInt();
         for (int i = 1; i <= rows; ++i) {
             for (int space = 1; space <= rows - i; ++space) {
                 System.out.print("  ");
