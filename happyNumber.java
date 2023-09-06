@@ -1,13 +1,14 @@
+package Lab;
 import java.util.Scanner;
 
-public class HappyNumberChecker {
+public class HappyNumber {
 
     interface SumOfSquares {
         int calculate(int num);
     }
 
     interface HappyChecker {
-        boolean isHappy(int num, SumOfSquares sumOfSquares);
+        boolean isHappy(int num, SumOfSquares digitSqaureSum);
     }
 
     public static void main(String[] args) {
@@ -25,13 +26,13 @@ public class HappyNumberChecker {
 
         boolean isHappy = isHappyNumber(number, new HappyChecker() {
             @Override
-            public boolean isHappy(int num, SumOfSquares sumOfSquares) {
+            public boolean isHappy(int num, SumOfSquares digitSqaureSum) {
                 int slow = num;
                 int fast = num;
                 do {
-                    slow = sumOfSquares.calculate(slow);
-                    fast = sumOfSquares.calculate(fast);
-                    fast = sumOfSquares.calculate(fast);
+                    slow = digitSqaureSum.calculate(slow);
+                    fast = digitSqaureSum.calculate(fast);
+                    fast = digitSqaureSum.calculate(fast);
                 } while (slow != fast);
 
                 return slow == 1;
