@@ -47,8 +47,7 @@ public class producerConsumer {
         // This class has a list, producer adds items to list and consumber removes items
         public static class PC {
 
-            // Create a list shared by producer and consumer
-            // Size of list is 2.
+            // Create a list shared by producer and consumer with Size of list is 2.
             LinkedList<Integer> list = new LinkedList<>();
             int capacity = 2;
 
@@ -59,8 +58,7 @@ public class producerConsumer {
                 while (true) {
                     synchronized (this)
                     {
-                        // producer thread waits while list
-                        // is full
+                        // producer thread waits while list is full
                         while (list.size() == capacity)
                             wait();
 
@@ -70,12 +68,10 @@ public class producerConsumer {
                         // to insert the jobs in the list
                         list.add(value++);
 
-                        // notifies the consumer thread that
-                        // now it can start consuming
+                        // notifies the consumer thread that now it can start consuming
                         notify();
 
-                        // makes the working of program easier
-                        // to  understand
+                        // makes the working of program easier to  understand
                         Thread.sleep(2000);
                     }
                 }
