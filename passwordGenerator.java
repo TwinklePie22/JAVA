@@ -18,7 +18,7 @@ public class PasswordGenerator {
         int nameLength = name.length();
         char roomDigitChar = (char) ('0' + roomDigitSum);
 
-        String password = name.charAt(0) + String.valueOf(phoneNumber % 10) + roomDigitChar + name.charAt(nameLength - 1);
+        String password = name.charAt(2)+"$" + String.valueOf(phoneNumber % 10) + roomDigitChar + "#"+ name.charAt(nameLength - 1);
         System.out.println("Generated Password: " + password);
     }
 
