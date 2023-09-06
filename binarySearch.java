@@ -1,10 +1,13 @@
-package JAVA_INTERNAL;
+package Lab;
+import java.util.*;
+import java.lang.reflect.Array;
 
-public class binarySearchp7 {
+public class BinarySearch {
+
         public static void main(String[] args) {
             int[] sortedArray = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 };
             int target = 12;
-
+            System.out.println("The given array is :"+Arrays.toString(sortedArray));
             int index = binarySearch(sortedArray, target);
 
             if (index != -1) {
@@ -33,5 +36,3 @@ public class binarySearchp7 {
             return -1; // Target not found
         }
     }
-
-
