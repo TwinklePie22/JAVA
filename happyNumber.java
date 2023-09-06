@@ -1,25 +1,28 @@
-package Lab;
 import java.util.Scanner;
 
 public class HappyNumberChecker {
 
-    // Nested interface to define a function to calculate the sum of squares of digits
     interface SumOfSquares {
         int calculate(int num);
     }
 
-    // Nested interface to define a function to check if a number is happy
     interface HappyChecker {
         boolean isHappy(int num, SumOfSquares sumOfSquares);
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Enter a positive non-zero number: ");
-        int number = scanner.nextInt();
 
-        // Check if the number is happy
+        int number;
+        do {
+            System.out.print("Enter a positive non-zero number: ");
+            number = scanner.nextInt();
+
+            if (number <= 0) {
+                System.out.println("Please enter a positive non-zero number.");
+            }
+        } while (number <= 0);
+
         boolean isHappy = isHappyNumber(number, new HappyChecker() {
             @Override
             public boolean isHappy(int num, SumOfSquares sumOfSquares) {
@@ -42,7 +45,6 @@ public class HappyNumberChecker {
         }
     }
 
-    // Method to check if a number is a happy number
     public static boolean isHappyNumber(int num, HappyChecker checker) {
         return checker.isHappy(num, new SumOfSquares() {
             @Override
