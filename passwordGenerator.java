@@ -3,16 +3,16 @@ import java.util.Scanner;
 
 public class PasswordGenerator {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         System.out.print("Enter the name: ");
-        String name = scanner.nextLine();
+        String name = sc.nextLine();
 
         System.out.print("Enter the room number: ");
-        int roomNumber = scanner.nextInt();
+        int roomNumber = sc.nextInt();
 
         System.out.print("Enter the phone number: ");
-        long phoneNumber = scanner.nextLong();
+        long phoneNumber = sc.nextLong();
 
         int roomDigitSum = calculateDigitSum(roomNumber);
         int nameLength = name.length();
@@ -22,7 +22,7 @@ public class PasswordGenerator {
         System.out.println("Generated Password: " + password);
     }
 
-    public static int calculateDigitSum(int number) {
+    static int calculateDigitSum(int number) {
         int sum = 0;
         while (number > 0) {
             sum += number % 10;
