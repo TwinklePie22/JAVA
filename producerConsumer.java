@@ -62,8 +62,7 @@ public class producerConsumer {
                         while (list.size() == capacity)
                             wait();
 
-                        System.out.println("Producer produced-"
-                                + value);
+                        System.out.println("Producer produced-"+ value);
 
                         // to insert the jobs in the list
                         list.add(value++);
@@ -89,10 +88,9 @@ public class producerConsumer {
                             wait();
 
                         // to retrive the ifrst job in the list
-                        int val = list.removeFirst();
+                        int value = list.removeFirst();
 
-                        System.out.println("Consumer consumed-"
-                                + val);
+                        System.out.println("Consumer consumed-"+ value);
 
                         // Wake up producer thread
                         notify();
