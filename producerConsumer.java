@@ -82,8 +82,7 @@ public class producerConsumer {
                 while (true) {
                     synchronized (this)
                     {
-                        // consumer thread waits while list
-                        // is empty
+                        // consumer thread waits while list is empty
                         while (list.size() == 0)
                             wait();
 
