@@ -8,14 +8,13 @@ class TreeNode {
 
     public TreeNode(int val) {
         this.val = val;
-        this.left = null;
-        this.right = null;
     }
 }
+
 public class BinaryTree {
     public static void main(String[] args) {
         // Create the binary tree
-    	TreeNode root = new TreeNode(20);
+        TreeNode root = new TreeNode(20);
         root.left = new TreeNode(5);
         root.right = new TreeNode(6);
         root.left.left = new TreeNode(9);
@@ -33,10 +32,7 @@ public class BinaryTree {
             return 0;
         }
 
-        int oddSum = calculateLevelSum(root, 1);  // Calculate sum at odd levels
-        int evenSum = calculateLevelSum(root, 0); // Calculate sum at even levels
-
-        return oddSum - evenSum;
+        return calculateLevelSum(root, 1) - calculateLevelSum(root, 0); 
     }
 
     private static int calculateLevelSum(TreeNode node, int level) {
@@ -45,11 +41,11 @@ public class BinaryTree {
         }
 
         // If the current level is odd, subtract the value of the node.
-        // If the current level is even, add the value of the node.
+        // If the current level is even, negate the value of the node.
         if (level % 2 == 0) {
+            return -node.val + calculateLevelSum(node.left, level + 1) + calculateLevelSum(node.right, level + 1);
+        } else {
             return node.val + calculateLevelSum(node.left, level + 1) + calculateLevelSum(node.right, level + 1);
-        }else{
-            return node.val - calculateLevelSum(node.left, level + 1) - calculateLevelSum(node.right, level + 1);
-        } 
+        }
     }
 }
